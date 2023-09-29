@@ -1,0 +1,15 @@
+Mods: {
+	NoNaturalRegen: {
+		DeathMessage: {
+			Nurse0: "{0} was slain by {1}."
+			Nurse1: "{0} was stabbed by {1}."
+			Nurse2: "{0} was slain by {1} using the American Healthcare System."
+			Nurse3: "{0} tried to bypass the No Natural Regen Challenge by abusing {1}."
+			Nurse4: "{0} was slain by {1} using a poison syringe."
+			Nurse5: "{0} was too poor for {1}."
+			Nurse6: "{1} was too greedy for {0} to survive."
+		}
+
+		Configs.DisplayName: No Natural Regen Config
+	}
+}
