@@ -1,0 +1,10 @@
+Configs: {
+	NNRConfig: {
+		DisplayName: N N R Config
+
+		allowNurseHealing: {
+			Label: "{$Mods.NNRConfig.Config.allowNurseHealing.Label}"
+			Tooltip: "{$Mods.NNRConfig.Config.allowNurseHealing.Tooltip}"
+		}
+	}
+}

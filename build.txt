@@ -1,0 +1,3 @@
+displayName = No Natural Regen
+author = First Fractal
+version = 1.0
