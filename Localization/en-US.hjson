@@ -10,6 +10,16 @@ Mods: {
 			Nurse6: "{1} was too greedy for {0} to survive."
 		}
 
-		Configs.DisplayName: No Natural Regen Config
+		Configs: {
+			NNRConfig: {
+				DisplayName: No Natural Regen Config
+				Headers.GeneralOptions: General Options
+
+				allowNurseHealing: {
+					Label: allow Nurse Healing?
+					Tooltip: allows the ability for the nurse to heal you. If set false, then the nurse will do something else instead, ;).
+				}
+			}
+		}
 	}
 }
