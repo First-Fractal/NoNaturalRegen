@@ -5,6 +5,7 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
 using System.ComponentModel;
+using Microsoft.Xna.Framework;
 
 namespace NoNaturalRegen
 {
@@ -20,29 +21,35 @@ namespace NoNaturalRegen
             Player.lifeRegenTime = 0;
             base.UpdateLifeRegen();
         }
+    }
 
+    public class NNRGlobalNPC : GlobalNPC
+    {
         //this function will make it that the nurse will insta-kill the player, if set to true.
-        public override bool ModifyNurseHeal(NPC nurse, ref int health, ref bool removeDebuffs, ref string chatText)
+        public override void OnChatButtonClicked(NPC npc, bool firstButton)
         {
             //check if the player doesn't allow the  player to heal with the nurse
             if (!NNRConfig.Instance.allowNurseHealing)
             {
-                //no one should surivie the nurse
-                Player.immune = false;
-                Player.immuneTime = 0;
-                Player.creativeGodMode = false;
-                Player.onHitDodge = false;
-                Player.shadowDodge = false;
+                //check if the current npc is the nurse
+                if (npc.type == NPCID.Nurse)
+                {
+                    //no one should surivie the nurse
+                    Player player = Main.player[npc.FindClosestPlayer()];
+                    player.immune = false;
+                    player.immuneTime = 0;
+                    player.creativeGodMode = false;
+                    player.onHitDodge = false;
+                    player.shadowDodge = false;
 
-                //pick a random death message for dying to the nurse
-                string deathMessageType = "Mods.NoNaturalRegen.DeathMessage.Nurse" + Main.rand.Next(0, 7).ToString();
+                    //pick a random death message for dying to the nurse
+                    string deathMessageType = "Mods.NoNaturalRegen.DeathMessage.Nurse" + Main.rand.Next(0, 7).ToString();
 
-                //insta-kill the player
-                Player.Hurt(PlayerDeathReason.ByCustomReason(Language.GetTextValue(deathMessageType, Player.name, nurse.FullName)), 999999, 1, dodgeable: false, armorPenetration: 9999);
-                return false;
+                    //insta-kill the player
+                    player.Hurt(PlayerDeathReason.ByCustomReason(Language.GetTextValue(deathMessageType, player.name, npc.FullName)), 9999999, 1, dodgeable: false, armorPenetration: 9999);
+                }
             }
-            
-            return base.ModifyNurseHeal(nurse, ref health, ref removeDebuffs, ref chatText);
+            base.OnChatButtonClicked(npc, firstButton);
         }
     }
 
