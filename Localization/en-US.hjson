@@ -27,9 +27,14 @@ Mods: {
 				DisplayName: No Natural Regen Config
 				Headers.GeneralOptions: General Options
 
+				allowNurseBoss: {
+					Label: "[i:43] Allow Nurse to Heal During Boss Fights?"
+					Tooltip: If false, then the nurse will insta-kill you when you try to heal during a boss fight.
+				}
+
 				allowNurseHealing: {
 					Label: "[i:1737] Allow Nurse Healing?"
-					Tooltip: allows the ability for the nurse to heal you. If set false, then the nurse will do something else instead, ;).
+					Tooltip: If false, then it the nurse will always insta-kill you, while also ignoring the previous config option.
 				}
 
 				allowHealingPotion: {
