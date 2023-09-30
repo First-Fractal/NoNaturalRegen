@@ -112,7 +112,6 @@ namespace NoNaturalRegen
         public static NNRConfig Instance;
 
         [Header("GeneralOptions")]
-
         [DefaultValue(false)]
         public bool allowNurseHealing;
 
