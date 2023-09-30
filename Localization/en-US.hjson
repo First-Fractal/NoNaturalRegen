@@ -11,6 +11,16 @@ Mods: {
 			Nurse4: "{0} was slain by {1} using a poison syringe."
 			Nurse5: "{0} was too poor for {1}."
 			Nurse6: "{1} was too greedy for {0} to survive."
+			Nurse7: "{0} dosen't have healthcare."
+
+			Heal0: "{0} was slain by {1}."
+			Heal1: "{0} was drowned by {1}."
+			Heal2: "{1} poisoned {0}."
+			Heal3: "{0}'s body didn't like {1}."
+			Heal4: "{0} overdosed on {1}."
+			Heal5: "{0} drank acid."
+			Heal6: "{0} drank a fake {1}."
+			Heal7: "{0} tried to chesse the No Natural Regen Challenge by drinking {1}."
 		}
 
 		Configs: {
@@ -21,6 +31,11 @@ Mods: {
 				allowNurseHealing: {
 					Label: allow Nurse Healing?
 					Tooltip: allows the ability for the nurse to heal you. If set false, then the nurse will do something else instead, ;).
+				}
+
+				allowHealingPotion: {
+					Label: allow Healing Potion
+					Tooltip: allows the ability to use healing potions. If set false, then your body won't like healing potions.
 				}
 			}
 		}
