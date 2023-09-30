@@ -1,5 +1,8 @@
 Mods: {
 	NoNaturalRegen: {
+		NNRInfoDisplayUnit: /sec
+		NNRRegenDisplay: Life Regen
+
 		DeathMessage: {
 			Nurse0: "{0} was slain by {1}."
 			Nurse1: "{0} was stabbed by {1}."

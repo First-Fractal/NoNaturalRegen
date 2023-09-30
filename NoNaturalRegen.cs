@@ -52,6 +52,37 @@ namespace NoNaturalRegen
             base.OnChatButtonClicked(npc, firstButton);
         }
     }
+     
+    //this is a class for the regen information that is below the minimap.
+    public class NNRRegenDisplay : InfoDisplay
+    {
+        //give it the correct name when hovering over it.
+        public override LocalizedText DisplayName => Language.GetText("Mods.NoNaturalRegen.NNRRegenDisplay");
+
+        //make it always active
+        public override bool Active()
+        {
+            return true;
+        }
+        //make it display the correct value
+        public override string DisplayValue(ref Color displayColor)
+        {
+            //get the regen
+            int regen = Main.player[Main.myPlayer].lifeRegen / 2;
+
+            //change the color of the display, depening on the regen
+            if (regen == 0)
+            {
+                displayColor = InactiveInfoTextColor;
+            } else if (regen < 0) {
+                displayColor = new Color(255, 19, 19, Main.mouseTextColor); 
+            }
+
+            //display the string
+            return regen.ToString() + Language.GetTextValue("Mods.NoNaturalRegen.NNRInfoDisplayUnit");
+        }
+    }
+
 
     public class NNRConfig : ModConfig
     {
@@ -60,8 +91,6 @@ namespace NoNaturalRegen
 
         [Header("GeneralOptions")]
 
-        //[Label("$Mods.NoNaturalRegen.Configs.allowNurseHealing.Label")]
-        //[Tooltip("$Mods.NoNaturalRegen.Configs.allowNurseHealing.Tooltip")]
         [DefaultValue(false)]
         public bool allowNurseHealing;
     }
