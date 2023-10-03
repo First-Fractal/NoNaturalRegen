@@ -80,21 +80,23 @@ namespace NoNaturalRegen
             return true;
         }
         //make it display the correct value
-        public override string DisplayValue(ref Color displayColor)
+        public override string DisplayValue(ref Color color, ref Color displayColor)
         {
-            //get the regen
-            int regen = Main.player[Main.myPlayer].lifeRegen / 2;
+            //get the regen info
+            double regen = (double)Main.player[Main.myPlayer].lifeRegen / 2;
 
             //change the color of the display, depening on the regen
             if (regen == 0)
             {
                 displayColor = InactiveInfoTextColor;
-            } else if (regen < 0) {
-                displayColor = new Color(255, 19, 19, Main.mouseTextColor); 
+            }
+            else if (regen < 0)
+            {
+                displayColor = new Color(255, 19, 19, Main.mouseTextColor);
             }
 
             //display the string
-            return regen.ToString() + Language.GetTextValue("Mods.NoNaturalRegen.NNRInfoDisplayUnit");
+            return (regen).ToString()+ Language.GetTextValue("Mods.NoNaturalRegen.NNRInfoDisplayUnit");
         }
     }
 
@@ -127,7 +129,7 @@ namespace NoNaturalRegen
         public static NNRConfig Instance;
 
         [Header("GeneralOptions")]
-        [DefaultValue(false)]
+        [DefaultValue(true)]
         public bool allowNurseBoss;
 
         [DefaultValue(true)]
