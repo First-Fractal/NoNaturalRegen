@@ -80,7 +80,7 @@ namespace NoNaturalRegen
             return true;
         }
         //make it display the correct value
-        public override string DisplayValue(ref Color color, ref Color displayColor)
+        public override string DisplayValue(ref Color displayColor)
         {
             //get the regen info
             double regen = (double)Main.player[Main.myPlayer].lifeRegen / 2;
@@ -92,7 +92,7 @@ namespace NoNaturalRegen
             }
             else if (regen < 0)
             {
-                displayColor = new Color(255, 19, 19, Main.mouseTextColor);
+                displayColor = new Color(255, 19, 19);
             }
 
             //display the string
