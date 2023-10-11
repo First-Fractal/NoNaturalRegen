@@ -1,6 +1,6 @@
 Mods: {
 	NoNaturalRegen: {
-		NNRInfoDisplayUnit: /sec
+		NNRInfoDisplayUnit: hp/sec
 		NNRRegenDisplay: Life Regen
 
 		DeathMessage: {

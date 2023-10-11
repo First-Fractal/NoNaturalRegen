@@ -96,7 +96,7 @@ namespace NoNaturalRegen
             }
 
             //display the string
-            return (regen).ToString()+ Language.GetTextValue("Mods.NoNaturalRegen.NNRInfoDisplayUnit");
+            return (regen).ToString() + " " + Language.GetTextValue("Mods.NoNaturalRegen.NNRInfoDisplayUnit");
         }
     }
 
