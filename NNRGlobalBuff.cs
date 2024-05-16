@@ -16,7 +16,7 @@ namespace NoNaturalRegen
             //check if the player isnt allow to use healing potion, and the current buff is potion sickness
             if (!NNRConfig.Instance.allowHealingPotion && type == BuffID.PotionSickness)
             {
-                //no one should surivie the nurse
+                //no one should surivie the death
                 player.immune = false;
                 player.immuneTime = 0;
                 player.creativeGodMode = false;

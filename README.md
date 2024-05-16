@@ -3,9 +3,7 @@ No Natural Regen is a mod that disable natural regen for everyone. Items that gi
 
 # Links
 [Download it here](https://steamcommunity.com/sharedfiles/filedetails/?id=2952321754)
-[Everything releated to this mod.] (https://firstfractal.com/info/NoNaturalRegen) 
-[More mods from me.] (https://firstfractal.com/TML) 
-[YT video for my attempt on this mod.] (https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+[Everything releated to this mod.] (https://firstfractal.com/info/NoNaturalRegen)
 
 # Change Log
 v 1.0: Relased the mod.
